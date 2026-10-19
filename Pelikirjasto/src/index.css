@@ -1,0 +1,220 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f3f5f9;
+  color: #222b3a;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.sovellus {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.ylatunniste {
+  background-color: #2457a7;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.ylatunniste h1 {
+  margin: 0 0 10px;
+  font-size: 2.2rem;
+}
+
+.ylatunniste p {
+  margin: 0;
+  color: #e5edff;
+}
+
+.sisalto {
+  width: min(100% - 32px, 1000px);
+  margin: 30px auto;
+  flex: 1;
+}
+
+.lisays-osio,
+.pelikortti {
+  background-color: white;
+  border: 1px solid #dfe4ec;
+  border-radius: 10px;
+  padding: 22px;
+  box-shadow: 0 3px 10px rgba(20, 40, 70, 0.05);
+}
+
+.lisays-osio {
+  margin-bottom: 35px;
+}
+
+.lisays-osio h2,
+.pelilista h2 {
+  margin-top: 0;
+}
+
+.pelilomake {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.lomakekentta {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.lomakekentta label {
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.lomakekentta input,
+.lomakekentta textarea {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #cbd3df;
+  border-radius: 6px;
+  background-color: white;
+  color: #222b3a;
+}
+
+.lomakekentta input:focus,
+.lomakekentta textarea:focus {
+  outline: 2px solid #8db5ff;
+  border-color: #2457a7;
+}
+
+.lomakekentta textarea {
+  resize: vertical;
+}
+
+.lomakekentta:nth-child(4) {
+  grid-column: 1 / -1;
+}
+
+.lisaa-nappi,
+.poista-nappi {
+  border: none;
+  border-radius: 6px;
+  padding: 11px 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.lisaa-nappi {
+  justify-self: start;
+  background-color: #2457a7;
+  color: white;
+}
+
+.lisaa-nappi:hover {
+  background-color: #193f7b;
+}
+
+.pelilista h2 {
+  margin-bottom: 18px;
+}
+
+.peliruudukko {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.pelikortti {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  overflow-wrap: anywhere;
+}
+
+.pelikortin-sisalto {
+  width: 100%;
+}
+
+.pelikortti h3 {
+  margin: 0 0 16px;
+  color: #2457a7;
+  font-size: 1.25rem;
+}
+
+.pelikortti p {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.pelikortti .pelin-kuvaus {
+  color: #596579;
+  margin-top: 14px;
+}
+
+.poista-nappi {
+  margin-top: auto;
+  background-color: #fde8e8;
+  color: #a52222;
+}
+
+.poista-nappi:hover {
+  background-color: #f8cccc;
+}
+
+.ei-peleja {
+  background-color: white;
+  border: 1px dashed #b9c4d4;
+  border-radius: 8px;
+  padding: 24px;
+  color: #596579;
+  text-align: center;
+}
+
+.alatunniste {
+  padding: 18px;
+  background-color: #e4e9f1;
+  text-align: center;
+  color: #596579;
+  font-size: 0.9rem;
+}
+
+.alatunniste p {
+  margin: 0;
+}
+
+@media (max-width: 750px) {
+  .peliruudukko {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .pelilomake,
+  .peliruudukko {
+    grid-template-columns: 1fr;
+  }
+
+  .lomakekentta:nth-child(4) {
+    grid-column: auto;
+  }
+
+  .ylatunniste h1 {
+    font-size: 1.8rem;
+  }
+
+  .lisays-osio,
+  .pelikortti {
+    padding: 17px;
+  }
+}
